@@ -26,7 +26,7 @@ Aplicações modernas possuem um grande número de usuários ativos disputando p
 
 Quando quebramos o nosso processo em pequenas tarefas capazes de serem executadas de maneira independente, obtemos o que denominamos concorrência. A concorrência é o primeiro passo em direção ao paralelismo, pois a partir dela, as tarefas podem começar a disputar recursos para execução. Já o paralelismo pode ser adicionado posteiormente para permitir a execução das tarefas independentes de maneira paralela. Veja mais sobre [aqui](https://www.youtube.com/watch?v=oV9rvDllKEg&ab_channel=gnbitcom).
 
-## Modelo de Thread por requisição e Pool de threads
+## Modelo de Thread por requisição e Event Loop
 
 <div style="text-align:center"><img src="./misc/images/figure-4.png" width="1200"/></div>
 
