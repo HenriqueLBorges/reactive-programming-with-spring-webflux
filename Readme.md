@@ -14,7 +14,7 @@ Programação reativa é um paradigma de programação assíncrona para constru�
 
 <div style="text-align:center"><img src="./misc/images/figure-1.png" width="800"/></div>
 
-Em meados de 2007 a Microsoft criou o [<i>Reactive Extensions</i> (Rx)](https://en.wikipedia.org/wiki/ReactiveX) com o intuito de representar <i>streams</i> contínuas de eventos assíncronos com diversos operadores para transformação (como: map, filter, reduce) e combinacão de diferentes <i>streams</i>. Com o passar dos anos, o projeto Reactive Extensions ganhou versões em diversas linguagens diferentes e uma especificação para bibliotecas reativas surgiu e foi incorporada no Java 9. Em 2017, o [Spring 5](https://spring.io/) foi lançado incluindo a stack reativa denominada [Spring WebFlux](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html) que utilizava internamente o [Project Reactor](https://projectreactor.io/docs/core/3.4.11/reference/index.html#about-doc).
+Em meados de 2007 a Microsoft criou o [<i>Reactive Extensions</i> (Rx)](https://en.wikipedia.org/wiki/ReactiveX) com o intuito de representar <i>streams</i> contínuas de eventos assíncronos com diversos operadores para transformação (como: map, filter, reduce) e combinacão de diferentes <i>streams</i>. Com o passar dos anos, o projeto <i>Reactive Extensions</i> ganhou versões em diversas linguagens diferentes e uma especificação para bibliotecas reativas surgiu e foi incorporada no Java 9.
 
 <div style="text-align:center"><img src="./misc/images/figure-2.png" width="400"/></div>
 
@@ -47,6 +47,12 @@ Já o segundo modelo, denominado [<i>Event Loop</i>](https://dzone.com/articles/
 O modelo Event-Loop apresenta uma vantagem de velocidade muito interessante, comprovada em um estudo da Netflix em 2015 apresentado nesse [repositório](https://github.com/Netflix-Skunkworks/WSPerfLab/blob/master/test-results/RxNetty_vs_Tomcat_April2015.pdf). Em suma, o estudo definiu velocidade como o uso da CPU por requisição e a latência sob uma alta carga. O RxNetty (<i>Non Blocking</i>) apresentou menos consumo de CPU por requisição e menor latência sob pressão que o TomCat (<i>Blocking</i>).
 
 ## Spring-WebFlux
+
+<div style="text-align:center"><img src="./misc/images/figure-8.jpeg" width="400"/></div>
+
+Em 2017 a versão 5.0 do [<i>Framework Spring</i>](https://spring.io/projects/spring-framework) contendo a <i>stack</i> reativa com o [<i>Spring Webflux</i>](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux) foi lançada. A <i>stack</i> reactiva foi criada seguindo o padrão <i>reactive streams</i> (mencionado anteriormente) para rodar utilizando o modelo <i>Event Loop</i>. O Spring WebFlux utiliza internamente o [<i>Project Reactor</i>](https://projectreactor.io/docs/core/3.4.11/reference/index.html#about-doc) para implementação da programação reativa. O <i>Spring-WebFlux</i> também possui o componente [<i>WebClient</i>](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux-client) para requisições [HTTP](https://pt.wikipedia.org/wiki/Hypertext_Transfer_Protocol) não bloqueantes (utilizando internamente o [<i>reactor-netty</i>](https://github.com/reactor/reactor-netty)).
+
+## Project Reactor
 
 ## Exemplos do repositório
 ### Lista de exemplos:
