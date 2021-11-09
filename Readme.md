@@ -2,9 +2,11 @@
 
 ## Sumário
 1. [O que é programação reativa?](##-O-que-é-programação-reativa?)
-2. [Spring-Webflux]()
-3. [Exemplos do repositório]()
-4. [Referências]()
+2. [Concorrência e paralelismo](##-Concorrência-e-paralelismo)
+3. [Modelo de Thread por requisição e Event Loop](##-Modelo-de-Thread-por-requisição-e-Event-Loop)
+4. [Spring-Webflux]()
+5. [Exemplos do repositório]()
+6. [Referências]()
 
 ## O que é programação reativa?
 
@@ -39,6 +41,10 @@ Existem dois grandes modelos de trabalho utilizando <i>Threads</i>, o primeiro e
 <div style="text-align:center"><img src="./misc/images/figure-6.png" width="600"/></div>
 
 Já o segundo modelo, denominado [<i>Event Loop</i>](https://dzone.com/articles/spring-webflux-eventloop-vs-thread-per-request-mod), propõe uma única <i>Non-Blocking I/O Thread</i> (NIO) que executa indefinidamente respondendo requisições de um conjunto de [<i>sockets channels</i>](https://www.developer.com/design/understanding-asynchronous-socket-channels-in-java/). É muito importante que a NIO <i>Thread</i> não seja bloqueada em nenhum momento por conta de comunicações síncronas com componentes externos, portanto para esse tipo de trabalho o modelo utiliza um conjunto de <i>Threads</i> separado (esse conjunto também pode ser não bloqueante).
+
+<div style="text-align:center"><img src="./misc/images/figure-7.png" width="600"/></div>
+
+O modelo Event-Loop apresenta uma vantagem de velocidade muito interessante, comprovada em um estudo da Netflix em 2015 apresentado nesse [repositório](https://github.com/Netflix-Skunkworks/WSPerfLab/blob/master/test-results/RxNetty_vs_Tomcat_April2015.pdf). Em suma, o estudo definiu velocidade como o uso da CPU por requisição e a latência sob uma alta carga. O RxNetty (<i>Non Blocking</i>) apresentou menos consumo de CPU por requisição e menor latência sob pressão que o TomCat (<i>Blocking</i>).
 
 ## Spring-WebFlux
 
