@@ -1,11 +1,11 @@
 # Programação reativa com <i>Spring WebFlux</i>
 
 ## Sumário
-1. [O que é programação reativa?](##%20O%20que%20é%20programação%20reativa?)
+1. [O que é programação reativa?](##-O-que-é-programação-reativa?)
 2. [Concorrência e paralelismo](##-Concorrência-e-paralelismo)
 3. [Modelo de <i>Thread</i> por requisição e <i>Event Loop</i>](##-Modelo-de-Thread-por-requisição-e-Event-Loop)
 4. [<i>Spring-Webflux</i>](##-Spring-WebFlux)
-5. [<i>Project Reactor</i>](##%20Project%20Reactor)
+5. [<i>Project Reactor</i>](##-Project-Reactor)
 6. [Exemplos do repositório](##-Exemplos-do-repositório)
 7. [Referências](##-Referências)
 
