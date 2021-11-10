@@ -1,7 +1,7 @@
 # Programação reativa com <i>Spring WebFlux</i>
 
 ## Sumário
-1. [O que é programação reativa?](##-O-que-é-programação-reativa?)
+1. [O que é programação reativa?](##%20O%20que%20é%20programação%20reativa?)
 2. [Concorrência e paralelismo](##-Concorrência-e-paralelismo)
 3. [Modelo de <i>Thread</i> por requisição e <i>Event Loop</i>](##-Modelo-de-Thread-por-requisição-e-Event-Loop)
 4. [<i>Spring-Webflux</i>](##-Spring-WebFlux)
@@ -80,7 +80,7 @@ Existem diversos operadores que podem ser usados para criar <i>buffers</i> ou me
 1. [Consumer Kafka Reativo](####-Consumer-Kafka-Reativo)
 
 #### Consumer Kafka Reativo
-- [Link da pasta](Examples/Consumer Kafka Reativo)
+- [Link da pasta](Examples/Consumer%20Kafka%20Reativo)
 ## Referências
 
 ###  Reactive Programming with RxJava: Creating Asynchronous, Event-Based Applications
