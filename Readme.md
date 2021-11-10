@@ -1,4 +1,4 @@
-# Programação reativa com Spring WebFlux
+# Programação reativa com <i>Spring WebFlux</i>
 
 ## Sumário
 1. [O que é programação reativa?](##-O-que-é-programação-reativa?)
@@ -46,7 +46,7 @@ Já o segundo modelo, denominado [<i>Event Loop</i>](https://dzone.com/articles/
 
 O modelo Event-Loop apresenta uma vantagem de velocidade muito interessante, comprovada em um estudo da Netflix em 2015 apresentado nesse [repositório](https://github.com/Netflix-Skunkworks/WSPerfLab/blob/master/test-results/RxNetty_vs_Tomcat_April2015.pdf). Em suma, o estudo definiu velocidade como o uso da CPU por requisição e a latência sob uma alta carga. O RxNetty (<i>Non Blocking</i>) apresentou menos consumo de CPU por requisição e menor latência sob pressão que o TomCat (<i>Blocking</i>).
 
-## Spring-WebFlux
+## <i>Spring-WebFlux</i>
 
 <div style="text-align:center"><img src="./misc/images/figure-8.jpeg" width="400"/></div>
 
