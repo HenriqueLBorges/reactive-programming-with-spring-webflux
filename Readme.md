@@ -3,10 +3,11 @@
 ## Sumário
 1. [O que é programação reativa?](##-O-que-é-programação-reativa?)
 2. [Concorrência e paralelismo](##-Concorrência-e-paralelismo)
-3. [Modelo de Thread por requisição e Event Loop](##-Modelo-de-Thread-por-requisição-e-Event-Loop)
-4. [Spring-Webflux]()
-5. [Exemplos do repositório]()
-6. [Referências]()
+3. [Modelo de <i>Thread</i> por requisição e Event Loop](##-Modelo-de-Thread-por-requisição-e-Event-Loop)
+4. [<i>Spring-Webflux</i>](##-Spring-WebFlux)
+5. [<i>Project Reactor</i>](##-Project-Reactor)
+6. [Exemplos do repositório](##-Exemplos-do-repositório)
+7. [Referências](##-Referências)
 
 ## O que é programação reativa?
 
@@ -28,7 +29,7 @@ Aplicações modernas possuem um grande número de usuários ativos disputando p
 
 Quando quebramos o nosso processo em pequenas tarefas capazes de serem executadas de maneira independente, obtemos o que denominamos concorrência. A concorrência é o primeiro passo em direção ao paralelismo, pois a partir dela, as tarefas podem começar a disputar recursos para execução. Já o paralelismo pode ser adicionado posteiormente para permitir a execução das tarefas independentes de maneira paralela. Veja mais sobre [aqui](https://www.youtube.com/watch?v=oV9rvDllKEg&ab_channel=gnbitcom).
 
-## Modelo de Thread por requisição e Event Loop
+## Modelo de <i>Thread</i> por requisição e Event Loop
 
 <div style="text-align:center"><img src="./misc/images/figure-4.png" width="1200"/></div>
 
@@ -52,7 +53,7 @@ O modelo Event-Loop apresenta uma vantagem de velocidade muito interessante, com
 
 Em 2017 a versão 5.0 do [<i>Framework Spring</i>](https://spring.io/projects/spring-framework) contendo a <i>stack</i> reativa com o [<i>Spring Webflux</i>](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux) foi lançada. A <i>stack</i> reactiva foi criada seguindo o padrão <i>reactive streams</i> (mencionado anteriormente) para rodar utilizando o modelo <i>Event Loop</i>. O <i>Spring WebFlux</i> utiliza internamente o [<i>Project Reactor</i>](https://projectreactor.io/docs/core/3.4.11/reference/index.html#about-doc) para implementação da programação reativa. O <i>Spring-WebFlux</i> também possui o componente [<i>WebClient</i>](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux-client) para requisições [HTTP](https://pt.wikipedia.org/wiki/Hypertext_Transfer_Protocol) não bloqueantes (utilizando internamente o [<i>reactor-netty</i>](https://github.com/reactor/reactor-netty)).
 
-## Project Reactor
+## <i>Project Reactor</i>
 
 <i>Reactor</i> é uma biblioteca de programação reativa completamente não bloqueante. A biblioteca implementa o padrão <i>reactive streams</i> e integra diretamente com as APIs do Java 8: [<i>CompletableFuture</i>](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html), [<i>Stream</i>](https://www.oracle.com/br/technical-resources/articles/java-stream-api.html) e [<i>Duration</i>](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html).
 
