@@ -80,4 +80,18 @@ Existem diversos operadores que podem ser usados para criar <i>buffers</i> ou me
 1. [Consumer Kafka Reativo](####-Consumer-Kafka-Reativo)
 
 #### Consumer Kafka Reativo
+
 ## Referências
+
+###  Reactive Programming with RxJava: Creating Asynchronous, Event-Based Applications
+
+<div style="text-align:center"><img src="./misc/images/figure-11.png" width="400"/></div>
+
+[Link da compra](https://www.amazon.com/Reactive-Programming-RxJava-Asynchronous-Applications/dp/1491931655)
+
+###  Hands-On Reactive Programming in Spring 5: Build cloud-ready, reactive systems with Spring 5 and Project Reactor
+<div style="text-align:center">
+    <img src="./misc/images/figure-12.jpeg" width="400"/>
+</div>
+
+[Link da compra](https://www.amazon.com.br/gp/product/B076QCBXZ2/ref=ppx_yo_dt_b_d_asin_title_o00?ie=UTF8&psc=1)
