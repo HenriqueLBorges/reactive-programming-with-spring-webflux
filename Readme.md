@@ -14,7 +14,7 @@ Programação reativa é um paradigma de programação assíncrona para constru�
 
 <div style="text-align:center"><img src="./misc/images/figure-1.png" width="800"/></div>
 
-Em meados de 2007 a Microsoft criou o [<i>Reactive Extensions</i> (Rx)](https://en.wikipedia.org/wiki/ReactiveX) com o intuito de representar <i>streams</i> contínuas de eventos assíncronos com diversos operadores para transformação (como: map, filter, reduce) e combinacão de diferentes <i>streams</i>. Com o passar dos anos, o projeto <i>Reactive Extensions</i> ganhou versões em diversas linguagens diferentes e uma especificação para bibliotecas reativas surgiu e foi incorporada no Java 9.
+Em meados de 2007 a Microsoft criou o [<i>Reactive Extensions</i> (Rx)](https://en.wikipedia.org/wiki/ReactiveX) com o intuito de representar <i>streams</i> contínuas de eventos assíncronos com diversos operadores para transformação (como: map, filter, reduce), composição e combinacão de diferentes <i>streams</i>. Com o passar dos anos, o projeto <i>Reactive Extensions</i> ganhou versões em diversas linguagens diferentes e uma especificação para bibliotecas reativas surgiu e foi incorporada no Java 9.
 
 <div style="text-align:center"><img src="./misc/images/figure-2.png" width="400"/></div>
 
@@ -50,9 +50,18 @@ O modelo Event-Loop apresenta uma vantagem de velocidade muito interessante, com
 
 <div style="text-align:center"><img src="./misc/images/figure-8.jpeg" width="400"/></div>
 
-Em 2017 a versão 5.0 do [<i>Framework Spring</i>](https://spring.io/projects/spring-framework) contendo a <i>stack</i> reativa com o [<i>Spring Webflux</i>](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux) foi lançada. A <i>stack</i> reactiva foi criada seguindo o padrão <i>reactive streams</i> (mencionado anteriormente) para rodar utilizando o modelo <i>Event Loop</i>. O Spring WebFlux utiliza internamente o [<i>Project Reactor</i>](https://projectreactor.io/docs/core/3.4.11/reference/index.html#about-doc) para implementação da programação reativa. O <i>Spring-WebFlux</i> também possui o componente [<i>WebClient</i>](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux-client) para requisições [HTTP](https://pt.wikipedia.org/wiki/Hypertext_Transfer_Protocol) não bloqueantes (utilizando internamente o [<i>reactor-netty</i>](https://github.com/reactor/reactor-netty)).
+Em 2017 a versão 5.0 do [<i>Framework Spring</i>](https://spring.io/projects/spring-framework) contendo a <i>stack</i> reativa com o [<i>Spring Webflux</i>](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux) foi lançada. A <i>stack</i> reactiva foi criada seguindo o padrão <i>reactive streams</i> (mencionado anteriormente) para rodar utilizando o modelo <i>Event Loop</i>. O <i>Spring WebFlux</i> utiliza internamente o [<i>Project Reactor</i>](https://projectreactor.io/docs/core/3.4.11/reference/index.html#about-doc) para implementação da programação reativa. O <i>Spring-WebFlux</i> também possui o componente [<i>WebClient</i>](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html#webflux-client) para requisições [HTTP](https://pt.wikipedia.org/wiki/Hypertext_Transfer_Protocol) não bloqueantes (utilizando internamente o [<i>reactor-netty</i>](https://github.com/reactor/reactor-netty)).
 
 ## Project Reactor
+
+<i>Reactor</i> é uma biblioteca de programação reativa completamente não bloqueante. A biblioteca implementa o padrão <i>reactive streams</i> e integra diretamente com as APIs do Java 8: [<i>CompletableFuture</i>](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html), [<i>Stream</i>](https://www.oracle.com/br/technical-resources/articles/java-stream-api.html) e [<i>Duration</i>](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html).
+
+<div style="text-align:center"><img src="./misc/images/figure-9.svg" width="400"/>
+<img src="./misc/images/figure-10.svg" width="400"/></div>
+
+O <i>Reactor</i> disponibiliza duas entidades que encapsulam o <i>Publisher</i> (visto anteriormente) porém adicionam algumas funcionalidades extras, são elas: [Mono](https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html) e [Flux](https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html). Enquanto a entidade Mono produz no máximo um ou nenhum resultado, a entidade Flux pode produzir uma sequência entre nenhum ou N resultados. Essa diferença é muito importante quando consideramos por exemplo, expressar o retorno de uma requisição HTTP como um Mono e expressar o retorno de uma consulta no banco de dados como um Flux. Essas entidades também ajudam a distinguir quais operadores fazem sentido para cada uma das entidades.
+
+
 
 ## Exemplos do repositório
 ### Lista de exemplos:
