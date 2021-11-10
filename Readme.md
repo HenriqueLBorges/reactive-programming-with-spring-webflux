@@ -87,7 +87,7 @@ Existem diversos operadores que podem ser usados para criar <i>buffers</i> ou me
 
 <div style="text-align:center"><img src="./misc/images/figure-11.png" width="400"/></div>
 
-[Link da compra](https://www.amazon.com/Reactive-Programming-RxJava-Asynchronous-Applications/dp/1491931655)
+[Link da compra](https://www.amazon.com.br/Reactive-Programming-RxJava-Tomasz-Nurkiewicz/dp/1491931655/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=Reactive+Programming+with+RxJava%3A+Creating+Asynchronous%2C+Event-Based+Applications&qid=1636568781&sr=8-1&ufe=app_do%3Aamzn1.fos.e05b01e0-91a7-477e-a514-15a32325a6d6)
 
 ###  Hands-On Reactive Programming in Spring 5: Build cloud-ready, reactive systems with Spring 5 and Project Reactor
 <div style="text-align:center">
