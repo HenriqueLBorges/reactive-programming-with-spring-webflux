@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(url = "https://api.bing.microsoft.com/v7.0/", name = "bing")
 public interface BingClient {
 
-    @GetMapping(value = "search?q=animal {word}", headers = {"Ocp-Apim-Subscription-Key=822efdff97a949c6b6b676f397ebb3ac"})
+    @GetMapping(value = "search?q=animal {word}", headers = {"Ocp-Apim-Subscription-Key="})
     String searchWord(@PathVariable("word") String word);
 }

@@ -18,7 +18,7 @@ import java.time.Duration;
 public class KafkaConsumerListener implements CommandLineRunner {
     final Logger logger = LoggerFactory.getLogger(KafkaConsumerListener.class);
     final private ReactiveKafkaConsumerTemplate<Long, String> reactiveKafkaConsumerTemplate;
-    final private WebClient webClient = WebClient.create("https://www.google.com");
+    final private WebClient webClient = WebClient.create("https://api.bing.microsoft.com/v7.0/");
     
     public KafkaConsumerListener(ReactiveKafkaConsumerTemplate<Long, String> reactiveKafkaConsumerTemplate) {
         this.reactiveKafkaConsumerTemplate = reactiveKafkaConsumerTemplate;
@@ -42,7 +42,7 @@ public class KafkaConsumerListener implements CommandLineRunner {
      */
     private Mono<String> requestBing(String word) {
         return webClient.get() //WebClient has its own netty thread pool
-                .uri("/search?hl=en&q= {word}", word)
+                .uri("search?q=animal {word}", word)
                 .retrieve()// Inicia a requisição
                 .bodyToMono(String.class)// Converte o objeto para um Mono String (dado que temos a possibilidade de 0 ou 1 resultado)
                 .doOnNext(f -> logger.info("Response arrived: " + f))// Printa a resposta
