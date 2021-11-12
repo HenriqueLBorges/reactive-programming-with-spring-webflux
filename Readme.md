@@ -27,7 +27,7 @@ Aplicações modernas possuem um grande número de usuários ativos disputando p
 
 <div style="text-align:center"><img src="./misc/images/figure-3.png" width="400"/></div>
 
-Quando quebramos o nosso processo em pequenas tarefas capazes de serem executadas de maneira independente, obtemos o que denominamos concorrência. A concorrência é o primeiro passo em direção ao paralelismo, pois a partir dela, as tarefas podem começar a disputar recursos para execução. Já o paralelismo pode ser adicionado posteiormente para permitir a execução das tarefas independentes ao mesmo tempo. Veja mais sobre [aqui](https://www.youtube.com/watch?v=oV9rvDllKEg&ab_channel=gnbitcom).
+Quando quebramos o nosso processo em pequenas tarefas capazes de serem executadas de maneira independente, obtemos o que denominamos concorrência. A concorrência é o primeiro passo em direção ao paralelismo, pois a partir dela, as tarefas podem começar a disputar recursos para execução. Já o paralelismo pode ser adicionado posteriormente para permitir a execução das tarefas independentes ao mesmo tempo. Veja mais sobre [aqui](https://www.youtube.com/watch?v=oV9rvDllKEg&ab_channel=gnbitcom).
 
 ## Modelo de <i>Thread</i> por requisição e <i>Event Loop</i>
 
@@ -62,17 +62,17 @@ Em 2017 a versão 5.0 do [<i>Framework Spring</i>](https://spring.io/projects/sp
 
 O <i>Reactor</i> disponibiliza duas entidades que encapsulam o <i>Publisher</i> (visto anteriormente) porém adicionam algumas funcionalidades extras, são elas: [Mono](https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html) e [Flux](https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html). Enquanto a entidade Mono produz no máximo um ou nenhum resultado, a entidade Flux pode produzir uma sequência entre nenhum ou N resultados. Essa diferença é muito importante quando consideramos por exemplo, expressar o retorno de uma requisição HTTP como um Mono e expressar o retorno de uma consulta no banco de dados como um Flux. Essas entidades também ajudam a distinguir quais operadores fazem sentido, sendo que a entidade Mono possui apenas um sub-conjunto dos operadores da entidade Flux.
 
-Podemos montar um fluxo de dados utilizando as entidades mencionadas, compondo processamentos subsquentes através dos operadores disponíveis para cada uma das entidades. <b>Entretanto, é importante salientar que nada acontece até que subscribe() seja invocado</b>.
+Podemos montar um fluxo de dados utilizando as entidades mencionadas, compondo processamentos subsequentes através dos operadores disponíveis para cada uma das entidades. <b>Entretanto, é importante salientar que nada acontece até que o método subscribe() seja invocado</b>.
 
 ### <i>Hot vs. Cold Publishers</i>
 
-Um <i>cold publisher</i> inicia do zero para cada novo <i>subscriber</i>, enquanto um <i>hot publisher</i> não inicia do zeo para cada novo <i>subscriber</i>. Podemos considerar um Publisher Mono que encapsula uma requisição HTTP, para cada novo subscriber a requisição HTTP é refeita. Já um Publisher Flux que encapsula um <i>Consumer</i> Kafka envia apenas os eventos consumidos após a chegada do novo <i>subscriber</i>. Veja mais [aqui](https://projectreactor.io/docs/core/3.4.11/reference/index.html#reactor.hotCold).
+Um <i>cold publisher</i> inicia do zero para cada novo <i>subscriber</i>, enquanto um <i>hot publisher</i> não inicia do zero para cada novo <i>subscriber</i>. Podemos considerar um Publisher Mono que encapsula uma requisição HTTP, para cada novo subscriber a requisição HTTP é refeita. Já um Publisher Flux que encapsula um <i>Consumer</i> Kafka envia apenas os eventos consumidos após a chegada do novo <i>subscriber</i>. Veja mais [aqui](https://projectreactor.io/docs/core/3.4.11/reference/index.html#reactor.hotCold).
 
 ### <i>Backpressure</i>
 
-Quando pensamos na composição de processamento através do operadores aplicados em um determinado <i>publisher</i>, temos que considerar diferentes velocidades em cada etapa do processamento. Principalmente quando temos um <i>publisher</i> capaz de enviar mais dados do que um <i>subscriber</i> consegue processar. A especificação <i>reactive streams</i> determina basicamente dois modos de funcionamento. No primeiro modo o <i>publisher</i> trabalha sem nenhum tipo de restrição e envia o máximo de dados que conseguir, já no segundo o <i>subscriber</i> consegue notificar através do <i>request</i> que consegue processar até N items.
+Quando pensamos na composição de processamento através de operadores aplicados em um determinado <i>publisher</i>, temos que considerar diferentes velocidades em cada etapa do processamento. Principalmente quando temos um <i>publisher</i> capaz de enviar mais dados do que um <i>subscriber</i> consegue processar. A especificação <i>reactive streams</i> determina basicamente dois modos de funcionamento. No primeiro modo o <i>publisher</i> trabalha sem nenhum tipo de restrição e envia o máximo de dados que conseguir, já no segundo o <i>subscriber</i> consegue notificar através do <i>request</i> que consegue processar até N items.
 
-Existem diversos operadores que podem ser usados para criar <i>buffers</i> ou mesmo processar apenas amostras do que é enviado pelo <i>publisher</i>. As técnicas descritas acima modificam o modelo baseado em <i>push</i> descrito anteriormente em um modelo híbrido <pull-push> onde o <i>subscriber</i> consegue controlar de maneira mais efetiva o que consumir do <i>publisher</i>.
+Existem diversos operadores que podem ser usados para criar <i>buffers</i> ou mesmo processar apenas amostras do que é enviado pelo <i>publisher</i>. As técnicas descritas acima modificam o modelo baseado em <i>push</i> descrito anteriormente para um modelo híbrido <pull-push> onde o <i>subscriber</i> consegue controlar de maneira mais efetiva o que consumir do <i>publisher</i>.
 
 ## Exemplos do repositório
 

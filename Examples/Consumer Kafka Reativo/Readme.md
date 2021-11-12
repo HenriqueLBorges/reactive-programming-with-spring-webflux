@@ -14,7 +14,7 @@ Para realizarmos a comparação, foi criada uma [lista de nomes de animais](Exam
 
 ## Resultados
 
-Através de um [<i>Notebook</i>](Examples/Consumer Kafka Reativo/spring-kafka-analyzer.ipynb) [<i>Jupyter</i>](https://jupyter.org/), analisei os logs de ambas as aplicações para entender se houve um ganho na utilização do modelo não bloqueante em conjunto com a programação reativa. Enquanto o  <i>consumer</i> Kafka não reativo levou certa de 723,596 segundos para consumir e requisitar todos os nomes na <i>API do Bing</i>, o <i>consumer</i> Kafka reativo levou cerca de 24,688 segundos, representando uma <b>melhoria de 96,5881513994% no tempo de processamento final</b>.
+Através de um [<i>Notebook</i>](spring-kafka-analyzer.ipynb) [<i>Jupyter</i>](https://jupyter.org/), analisei os logs de ambas as aplicações para entender se houve um ganho na utilização do modelo não bloqueante em conjunto com a programação reativa. Enquanto o  <i>consumer</i> Kafka não reativo levou certa de 723,596 segundos para consumir e requisitar todos os nomes na <i>API do Bing</i>, o <i>consumer</i> Kafka reativo levou cerca de 24,688 segundos, representando uma <b>melhoria de 96,5881513994% no tempo de processamento final</b>.
 
 ### Por que isso acontece?
 
